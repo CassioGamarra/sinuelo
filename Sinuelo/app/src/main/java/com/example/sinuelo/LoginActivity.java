@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             queue = Volley.newRequestQueue(this);
 
-            String url = "http://192.168.0.4:3333/login";
+            String url = "http://192.168.0.5:3333/login";
             //Cria os parâmetros da requisição
             Map<String, String> params = new HashMap<>();
             params.put("login", login);

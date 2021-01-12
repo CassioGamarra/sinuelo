@@ -36,7 +36,6 @@
 
         <Button
             android:id="@+id/btnRegistro"
-            android:tag="0,0"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:text=""
@@ -49,7 +48,6 @@
 
         <Button
             android:id="@+id/btnBuscar"
-            android:tag="0,0"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:text=""
@@ -61,7 +59,6 @@
             android:onClick="abrirBusca"/>
         <Button
             android:id="@+id/btnAlertas"
-            android:tag="0,0"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:text=""
@@ -81,7 +78,6 @@
 
         <Button
             android:id="@+id/btnBastao"
-            android:tag="0,0"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:text=""
@@ -89,11 +85,11 @@
             android:background="@drawable/bastao"
             android:textSize="100sp"
             android:textColor="#4169e1"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:onClick="gerenciarBastao"/>
 
         <Button
             android:id="@+id/btnConexao"
-            android:tag="0,0"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:text=""
@@ -101,10 +97,10 @@
             android:textSize="100sp"
             android:textColor="#4169e1"
             android:background="@drawable/conexao"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:onClick="conexoesBluetooh"/>
         <Button
             android:id="@+id/btnHistorico"
-            android:tag="0,0"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:text=""
