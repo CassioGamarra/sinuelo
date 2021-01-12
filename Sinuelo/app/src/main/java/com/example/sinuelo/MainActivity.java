@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.Set;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,8 +46,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void conexoesBluetooh(View v) {
-        Intent searchPairedDevicesIntent = new Intent(this, PairedDevicesActivity.class);
-        startActivityForResult(searchPairedDevicesIntent, 2); //SELECT_PAIRED_DEVICE
+        if(!bluetoothAdapter.isEnabled()) {
+            Toast.makeText(MainActivity.this, "Ative seu bluetooth", Toast.LENGTH_SHORT).show();
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, 1); //Habilitar bluetooth
+            Toast.makeText(MainActivity.this, "Ativando Bluetooth...", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent searchPairedDevicesIntent = new Intent(this, PairedDevicesActivity.class);
+            startActivityForResult(searchPairedDevicesIntent, 2); //SELECT_PAIRED_DEVICE
+        }
     }
 
     public void gerenciarBastao(View v) {
@@ -100,10 +108,10 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 return false;
             }
-        } catch(IOException connectEcption){
+        } catch(IOException connectException){
             try{
                 btSocket.close();
-            }catch(IOException closEception){
+            }catch(IOException closException){
                 return false;
             }
         }
